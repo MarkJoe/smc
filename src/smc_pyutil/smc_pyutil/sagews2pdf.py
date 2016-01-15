@@ -574,9 +574,7 @@ class Worksheet(object):
     def __len__(self):
         return len(self._cells)
 
-    def latex_preamble(self, title='', author='', date='', style='modern', contents=True):
-        title = title.replace('_', '\_')
-        author = author.replace('_', '\_')
+    def latex_preamble(self, title='',author='', date='', style='modern', contents=True):
         # The utf8x instead of utf8 below is because of http://tex.stackexchange.com/questions/83440/inputenc-error-unicode-char-u8-not-set-up-for-use-with-latex, which I needed due to approx symbols, etc. causing trouble.
         #\usepackage{attachfile}
         s = STYLES[style]
